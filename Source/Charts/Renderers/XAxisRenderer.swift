@@ -59,6 +59,10 @@ open class XAxisRenderer: AxisRendererBase
     
     open override func computeAxisValues(min: Double, max: Double)
     {
+        if min.isNaN || max.isNaN {
+            print("min or max is NaN")
+        }
+        
         super.computeAxisValues(min: min, max: max)
         
         computeSize()
